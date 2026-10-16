@@ -1,0 +1,60 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeployDock</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header>
+      <div class="brand"><span class="logo">D</span> DeployDock</div>
+      <span class="badge">SELF-HOSTED</span>
+    </header>
+
+    <section class="hero">
+      <span class="eyebrow">YOUR DEPLOYMENT WORKSPACE</span>
+      <h1>From source code<br>to <span>something live.</span></h1>
+      <p>Upload a Node.js project ZIP and launch it in an isolated container.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Deploy a project</h2>
+      <p class="muted">Your ZIP must contain a package.json with a start script.</p>
+
+      <form id="upload-form">
+        <label class="dropzone" for="project-file">
+          <span class="upload-icon">↑</span>
+          <strong id="file-name">Choose a project ZIP</strong>
+          <small id="file-info">Click here to browse · Maximum 20 MB</small>
+          <input id="project-file" type="file" accept=".zip" required>
+        </label>
+
+        <div class="actions">
+          <div class="runtime">
+            <span class="runtime-icon">⌘</span>
+            <div><strong>Node.js 22</strong><small>Container runtime</small></div>
+          </div>
+          <button id="deploy-button" type="submit">Deploy project ↗</button>
+        </div>
+      </form>
+      <p id="notice" class="notice" hidden></p>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><h2>Your deployments</h2><p class="muted">Apps you've uploaded</p></div>
+        <button id="refresh" class="secondary" type="button">Refresh</button>
+      </div>
+      <div id="deployments">
+        <p class="muted">Loading deployments…</p>
+      </div>
+    </section>
+
+    <footer>DeployDock <span>·</span> Starter edition</footer>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>
