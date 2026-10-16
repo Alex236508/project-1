@@ -180,12 +180,11 @@ z.extractall('/out')
 
     // Fixed container command; the uploaded start script is still
     // untrusted code and must only run in a restricted environment.
-    const installAndStart = [
-      "if [ -f pnpm-lock.yaml ]; then",
-      "corepack enable && pnpm install --frozen-lockfile",
-      "elif [ -f package-lock.json ]; then npm ci",
-      "else npm install",
-      "fi && npm start"
+    const installAndStart =
+      "if [ -f pnpm-lock.yaml ]; then " +
+      "corepack enable && pnpm install --frozen-lockfile; " +
+      "elif [ -f package-lock.json ]; then npm ci; " +
+      "else npm install; fi && npm start";
     ].join("; ");
 
     try {
