@@ -1,0 +1,13 @@
+{
+  "name": "deploydock",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@fastify/multipart": "^9.0.3",
+    "fastify": "^5.2.1"
+  }
+}
